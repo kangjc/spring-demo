@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.shiguang.pojo.Address"/>
+
+    <bean id="student" class="com.shiguang.pojo.Student">
+        <!--一般属性注入-->
+        <property name="name" value="时光"/>
+        <!--对象注入-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>三国演义</value>
+                <value>水浒传</value>
+                <value>红楼梦</value>
+            </array>
+        </property>
+        <!--List集合注入-->
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>读书</value>
+                <value>看电影</value>
+            </list>
+        </property>
+        <!--map集合-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="120153612566468713"/>
+                <entry key="银行卡" value="123645645984643633"/>
+            </map>
+        </property>
+        <!--Set集合-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>KPL</value>
+            </set>
+        </property>
+        <property name="wife">
+            <!--未婚-->
+            <null/>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="学号">20210306</prop>
+                <prop key="性别">男</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
